@@ -1,9 +1,15 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
+import * as BeerActions from '../actions/index';
 import Breweries from './breweries';
 import SearchBar from './search_bar';
 
 class Home extends Component {
+  componentDidMount() {
+    const { breweries, dispatch } = this.props;
+
+    if (breweries.length === 0) dispatch(BeerActions.fetchBeer());
+  }
 
   render() {
     const { breweries } = this.props;
@@ -18,7 +24,12 @@ class Home extends Component {
   }
 }
 Home.propTypes = {
-  breweries: PropTypes.array.isRequired,
+  breweries: PropTypes.array,
+  dispatch: PropTypes.func.isRequired,
+};
+
+Home.defaultProps = {
+  breweries: [],
 };
 
 const mapStateToProps = ({ breweries }) => ({

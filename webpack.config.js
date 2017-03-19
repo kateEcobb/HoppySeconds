@@ -1,16 +1,13 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const postCSSConfig = require('./config/postcss.config');
 
 module.exports = {
   entry: [
     'babel-polyfill',
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './src/index.js',
+    'webpack-hot-middleware/client',
+    './src/client/index.js',
   ],
   output: {
     path: __dirname,
@@ -26,7 +23,7 @@ module.exports = {
           'babel-loader',
         ],
         exclude: /node_modules/,
-      }
+      },
     ],
   },
   plugins: [
