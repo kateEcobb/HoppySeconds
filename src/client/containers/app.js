@@ -20,7 +20,7 @@ AppContainer.propTypes = {
 };
 
 const mapStateToProps = ({ breweries }) => ({
-  breweries,
+  breweries: breweries.breweries,
 });
 
 export default connect(mapStateToProps)(AppContainer);

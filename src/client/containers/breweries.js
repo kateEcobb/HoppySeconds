@@ -1,17 +1,24 @@
 import React, { Component, PropTypes } from 'react';
-// import Spinner from 'react-spinkit';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { fetchBeer } from '../actions/index';
 
 class BreweriesContainer extends Component {
   render() {
+    const { breweries } = this.props;
+
     return (
-      <div> hello </div>
+      <div>
+        {/* {breweries.map(brewery => (
+          <div>{brewery.name}</div>
+        ))} */}
+      </div>
     );
   }
 }
 
-const mapStateToProps = ({ breweries }) => ({ breweries });
+BreweriesContainer.propTypes = {
+  breweries: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+const mapStateToProps = ({ breweries: state }) => ({ breweries: state.breweries });
 
 export default connect(mapStateToProps)(BreweriesContainer);

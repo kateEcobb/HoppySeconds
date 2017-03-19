@@ -30,7 +30,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       filename: 'index.html',
-      template: 'index.html',
+      template: './src/client/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),

@@ -3,7 +3,7 @@ import { routerReducer } from 'react-router-redux';
 import BeerReducer from './reducer_beer';
 
 const rootReducer = combineReducers({
-  beer: BeerReducer,
+  breweries: BeerReducer,
   routing: routerReducer,
 });
 

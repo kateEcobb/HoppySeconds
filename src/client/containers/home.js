@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import * as BeerActions from '../actions/index';
-import Breweries from './breweries';
+import Main from '../components/main';
 import SearchBar from './search_bar';
 
 class Home extends Component {
@@ -18,13 +18,13 @@ class Home extends Component {
         <div className="searchBar">
           <SearchBar />
         </div>
-        <Breweries breweries={breweries} />
+        <Main breweries={breweries} />
       </div>
     );
   }
 }
 Home.propTypes = {
-  breweries: PropTypes.array,
+  breweries: PropTypes.arrayOf(PropTypes.object),
   dispatch: PropTypes.func.isRequired,
 };
 
@@ -33,7 +33,7 @@ Home.defaultProps = {
 };
 
 const mapStateToProps = ({ breweries }) => ({
-  breweries,
+  breweries: breweries.breweries,
 });
 
 export default connect(mapStateToProps)(Home);
