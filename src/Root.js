@@ -2,10 +2,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import App from './components/app';
-import Search from './containers/search_bar';
+import App from './containers/app';
 import Home from './containers/home';
-import './styles/reset.css';
+import Breweries from './containers/breweries';
+import configureStore from './store.dev';
 
 const store = configureStore(browserHistory);
 const syncedHistory = syncHistoryWithStore(browserHistory, store);
@@ -16,6 +16,7 @@ const Root = () => (
       <Router history={syncedHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
+          <Route path="/breweries" component={Breweries} />
         </Route>
       </Router>
     </div>

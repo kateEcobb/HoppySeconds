@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import Spinner from 'react-spinkit';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchBeer } from '../actions/index';
@@ -23,8 +22,6 @@ class SearchBar extends Component {
     this.props.fetchBeer(this.state.term);
     this.setState({ term: '' });
   }
-
-  renderLoader = () => <Spinner spinnerName="citcle" noFadeIn className="loader" />
 
   render() {
     return (

@@ -1,0 +1,57 @@
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotateX(-50%), rotateY(-50%);
+  width: 120px;
+  height: 120px;
+}
+
+.header {
+  background: #fff;
+  padding: 0 25px;
+  height: 60px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-bottom: 1px black !important;
+  backface-visibility: hidden;
+}
+
+.leftMenu {
+  top: 25px;
+  left: 25px;
+  list-style: none;
+  list-style-image: none;
+  text-align: center;
+}
+
+
+.searchBar {
+  align: center;
+  width: 50%;
+}
+
+.items {
+  display: inline-block;
+  padding-right: 20px;
+  color: #B7B7B7;
+  cursor: pointer;
+}
+
+.items:hover {
+  color: black;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
