@@ -12,5 +12,6 @@ module.exports = {
     }).catch(function(err){
       res.sendStatus(500)
     })
+    // res.status(200).send(JSON.stringify({data: {data: [{name: '21st Amendment'}, {name: 'apples'} ]}}))
   }
 }

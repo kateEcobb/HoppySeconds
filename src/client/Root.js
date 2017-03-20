@@ -6,6 +6,7 @@ import App from './containers/app';
 import Home from './containers/home';
 import Breweries from './containers/breweries';
 import configureStore from './store.dev';
+import DevTools from './components/devtools/devtools';
 
 const store = configureStore(browserHistory);
 const syncedHistory = syncHistoryWithStore(browserHistory, store);
@@ -19,6 +20,7 @@ const Root = () => (
           <Route path="/breweries" component={Breweries} />
         </Route>
       </Router>
+      {true && <DevTools />}
     </div>
   </Provider>
 );

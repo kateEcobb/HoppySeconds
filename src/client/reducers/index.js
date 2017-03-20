@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import BeerReducer from './reducer_beer';
+import breweries from './reducer_beer';
 
 const rootReducer = combineReducers({
-  breweries: BeerReducer,
+  breweries,
   routing: routerReducer,
 });
 

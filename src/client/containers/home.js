@@ -28,10 +28,6 @@ Home.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-Home.defaultProps = {
-  breweries: [],
-};
-
 const mapStateToProps = ({ breweries }) => ({
   breweries: breweries.breweries,
 });

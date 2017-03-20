@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
+import BreweryView from './brewery';
 
 const Breweries = ({ breweries }) => (
   <div>
     {breweries.map(brewery => (
-      <div>{brewery.name}</div>
+      <BreweryView brewery={brewery.brewery} key={brewery.brewery.id} />
     ))}
   </div>
 );

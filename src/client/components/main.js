@@ -10,6 +10,6 @@ const Main = props => (
 
 Main.propTypes = {
   breweries: PropTypes.array.isRequired,
-}
+};
 
 export default Main;
